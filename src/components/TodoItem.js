@@ -3,7 +3,10 @@ import React from 'react'
 function TodoItem(props){
     return(
         <div className="todo-item">
-            {props.completed ? <input type="checkbox" checked/> : <input type="checkbox"/>}
+            <input 
+                type="checkbox" 
+                checked={props.completed}
+                onChange={() => props.handleChange(props.id)}/>
             <label>{props.text}</label>
         </div>
     )
